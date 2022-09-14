@@ -1,0 +1,120 @@
+<div [ngClass]="[storDetails]" style="z-index: 9;"
+  class=" layer w-100 h-100 position-absolute bg-black bg-opacity-50 top-0 position-fixed"></div>
+
+<app-navbar></app-navbar>
+<div [ngClass]="[storDetails]" class=" w-100 h-100  position-absolute d-flex align-items-start  justify-content-center">
+  <div style="z-index: 999!important;" class="container position-fixed col-lg-4 col-sm-8  h-50 pb-4 bg-white rounded-5 ">
+    <div class=" d-flex py-3 justify-content-between fs-4">
+      <h1 style="cursor: pointer;" class="fs-2">STORE</h1>
+      <i (click)="storeBtn()" style="cursor: pointer;" class="fa-solid fa-circle-xmark "></i>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-evenly   h-75">
+      <input [(ngModel)]="storeName" class=" w-100 p-2 rounded-5  form-control" type="text" placeholder="store's name">
+
+      <div class="input-group  w-100 mt-2 d-flex flex-column w-100  ">
+        <label for="">Categoty</label>
+        <select [(ngModel)]="storeCategory" class="form-select  rounded-5 w-100 mt-1">
+          <option>clothes</option>
+          <option>electronic</option>
+          <option>furniture</option>
+          <option>supermarket</option>
+          <option>fast food</option>
+          <option>restaurants</option>
+
+
+
+
+
+
+        </select>
+      </div>
+      <div class="mb-3 w-100  ">
+        <input  class="form-control rounded-5 mt-2 d-none" (change)="upload($event)" type="file" id="formFile">
+        <label class=" btn btn-light w-100" for="formFile">Store Pictures</label>
+
+      </div>
+
+      <button (click)="addStore()" class=" btn btn-primary w-100 rounded-5">Done</button>
+    </div>
+  </div>
+</div>
+<div class=" container">
+  <div class="row">
+
+
+    <div class="col-lg-3 px-4 col-md-12 mt-5 ">
+      <div
+        class="col-12 border-bottom bg-white  d-flex align-items-center justify-content-around py-3 flex-column rounded-top "
+        style="height: 35vh !important; ">
+        <div
+          class="col-12 d-flex justify-content-center profilePic  d-flex align-items-center justify-content-evenly position-relative">
+
+          <p [ngClass]="{'d-block': edit =='edit', 'd-none':edit=='' }" (click)="cancel()" class=" fs-4 text-danger"><i
+              class="fa-solid fa-ban"></i></p>
+
+          <img class="position-relative " [ngClass]="{' me-1': edit =='edit'}"
+            style="width: 100px; height: 100px; border-radius: 50%;" [src]="url" alt="">
+          <p [ngClass]="{'opacity-25': edit =='edit', ' opacity-0':edit=='' }"
+            class="position-absolute bg-black  opacity-0  d-flex align-items-center justify-content-center layer "
+            style="width: 100px; height: 100px; border-radius: 50%; margin-top: 12px; ">
+            <input type="file" value="" multiple (change)="uploads($event)" id="file" class=" d-none"> <label
+              for="file">
+              <i [ngClass]="{'d-none': edit =='edit' }" class="fa-solid fa-pen-to-square text-white"
+                style="z-index: 9; cursor: pointer;"></i>
+            </label>
+          </p>
+          <p [ngClass]="{'d-block': edit =='edit', 'd-none':edit=='' }" (click)="save()" class=" fs-4 text-success"><i
+              class="fa-solid fa-check"></i></p>
+
+
+        </div>
+
+
+        <div class=" d-flex flex-column align-items-center  position-relative "
+          style="height: 50px!important; width: 200px;">
+          <p class=" fs-5 position-absolute top-0">{{userdata?.firstName }} {{userdata?.lastName}}</p>
+          <p class=" opacity-50 position-absolute bottom-0">{{userdata?.time}}</p>
+        </div>
+
+
+
+
+        <div class="col-12 container ">
+          <button [ngClass]="{'col-5': removeTitle =='deleteStore', 'col-12':removeTitle=='' }"
+            class=" btn btn-light border" routerLink="/userinfo/settings">settings</button>
+          <button  *ngIf="removeTitle =='deleteStore'" class="col-6 offset-1  btn btn-light border "
+            (click)="deleteStore()">{{removeTitle}}
+          </button>
+        </div>
+      </div>
+
+      <div class="navPerInfo bg-white py-2  rounded-bottom">
+        <div class=" d-flex flex-column  h-auto">
+          <p [ngClass]="[ordersStyle]" routerLink="/userinfo/orders">orders(3)</p>
+          <p [ngClass]="[favoritesStyle]" routerLink="/userinfo/favorites">favorites({{favcount}})</p>
+          <p [ngClass]="[personalStyle]" routerLink="/userinfo/personal">personal info</p>
+        </div>
+      </div>
+      <div>
+        <button  (click)="storeBtn()" class=" contanier btn btn-dark w-100 mt-2">{{storeTitle}}</button>
+      </div>
+    </div>
+
+
+
+    <div class="col-lg-9 col-md-12 mt-5 px-4">
+      <app-orders [ngClass]="[orders]"></app-orders>
+      <app-personal [ngClass]="[personal]"></app-personal>
+      <app-settings [ngClass]="[settings]"></app-settings>
+      <app-favorites [ngClass]="[favorites]"></app-favorites>
+
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+

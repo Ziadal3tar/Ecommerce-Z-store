@@ -1,0 +1,4 @@
+.one i:hover{
+  transition: 0.3s;
+  color: white !important;
+}

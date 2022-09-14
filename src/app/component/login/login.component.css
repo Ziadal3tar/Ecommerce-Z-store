@@ -1,0 +1,51 @@
+input{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #c7c7cd;
+  border-top: 0px solid #c7c7cd ;
+  border-left: 0px solid #c7c7cd ;
+  border-right: 0px solid #c7c7cd ;
+}
+button:hover{
+background: transparent !important;
+color: white !important;
+}
+h4 span{
+  transition: .3s;
+}
+h4 span:hover{
+  color: #dc3545
+}
+
+/* @media (min-width: 1025px) { */
+
+@media (min-width: 300px) and (max-width: 640px){
+  .login{
+    width: 25% !important;
+  }
+  .main{
+    height: 80% !important;
+    padding: 10% 0px  !important;
+    margin-left: 0.1px;
+  }
+}
+@media (min-width: 640px) and (max-width: 768px) {
+  .login{
+    width: 50% !important;
+  }
+  .main{
+    height: 80% !important;
+    padding: 10% 0px  !important;
+    margin-left: 0.1px;
+  }
+
+}
+@media (min-width: 640px) and (max-width: 1082px) {
+  .login{
+    width: 50% !important;
+  }
+}
+@media (min-width: 1083px) and (max-width: 999999999px){
+  .login{
+    width: 25% !important;
+  }
+}

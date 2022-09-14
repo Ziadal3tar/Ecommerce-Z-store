@@ -1,0 +1,115 @@
+<nav [ngClass]="[navHeight]" [ngClass]="[onScroll]" id="nav" style="z-index: 9; transition: 0.5s;"
+  class=" my-3  w-100 d-flex  align-items-center justify-content-center nav navbar-expand-lg  mx-auto ">
+
+  <div class="   container d-flex justify-content-between align-items-center  flex-wrap " style="z-index: 9;">
+
+
+    <i (click)=" showNav()" class="fa-solid fa-bars header-toggle col-md-4 fs-3 d-none  "></i>
+
+
+    <div class=" col-lg-2  col-md-4 offset-lg-0 d-flex justify-content-center ">
+      <a routerLink="/home" class="  navbar-brand text-danger fw-bold fs-1 ">Z-STORE</a>
+    </div>
+
+
+    <div class=" navitem col-md-4  col-lg-6 d-flex align-items-center justify-content-around offset-lg-1   ">
+      <ul class="navbar-nav nav-list  d-flex justify-content-lg-around  justify-content-lg-between w-75 ">
+
+        <li class="nav-item ">
+          <a class="nav-link " routerLink="/home">HOME </a>
+        </li>
+
+
+
+
+
+
+        <li class="nav-item shopDrop drop">
+          <a class="nav-link  " (click)="dropShop('shop')">SHOP </a>
+
+          <ul class="ul position-absolute list-unstyled text-decoration-none bg-white text-white mt-3 me-5 px-4 ">
+
+            <li><a routerLink="/male">MALE</a></li>
+            <li><a routerLink="/female">FEMALE </a></li>
+            <li><a routerLink="/kids">KIDS</a></li>
+
+          </ul>
+
+        </li>
+
+
+
+
+
+        <li class="nav-item blogDrop ">
+          <a id="setting" class="nav-link d-flex align-items-center" (click)="dropShop('blog')">BLOG </a>
+
+        </li>
+
+
+
+
+
+        <li class="nav-item pagesDrop drop ">
+          <a class="nav-link " (click)="dropShop('pages')">PAGES </a>
+
+          <ul class="ul position-absolute list-unstyled  text-white text-decoration-none bg-white   mt-3 me-5 px-4 ">
+            <li><a routerLink="/login">LOGIN</a></li>
+            <li><a routerLink="/signup">SIGN UP </a></li>
+            <li *ngIf="userData?.storeId"><a routerLink="/admin">ADMIN</a></li>
+            <li><a routerLink="/main">LOGOUT</a></li>
+
+          </ul>
+
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link "> CONTACT</a>
+        </li>
+
+
+
+      </ul>
+
+    </div>
+
+    <div class="user-details  d-flex  align-items-center justify-content-end col-md-4  col-lg-3  ">
+      <i (click)="openSearch()" class="fa-solid fa-magnifying-glass  fs-5" ></i>
+      <div class="userImg d-flex align-items-center justify-content-around position-relative  " style="  width: 80px;">
+
+        <img *ngIf="userData" src="{{userData.profilePic}}" alt="" routerLink="/userinfo/settings"
+          style="width: 40px;height: 40px;border-radius: 50%; cursor: pointer;">
+        <ul
+          class=" userdatiles position-absolute  list-unstyled text-black text-decoration-none bg-white  me-5 px--3 text-center ">
+          <li><a routerLink="/userinfo/orders">Orders</a></li>
+          <li><a routerLink="/userinfo/personal">Personal</a></li>
+          <li><a routerLink="/userinfo/favorites">Favorites</a></li>
+          <li><a routerLink="/userinfo/settings">Settings</a></li>
+          <hr>
+          <li><a routerLink="/main" (click)="clearLocalS()">logout</a></li>
+        </ul>
+      </div>
+
+      <i *ngIf="userData" style="cursor: pointer;" class="fs-5 mood fab fa-opencart d-flex align-items-center justify-content-center" (click)="Subtotal()"><p *ngIf="cartlength!=0" class="bg-danger rounded-5 d-flex align-items-center justify-content-center p-2 text-white" style="width:auto ;height: auto; font-size: 10px; ">{{cartlength}}</p></i>
+
+      <li *ngIf="!userData" class="nav-item right-0 ">
+        <a class="nav-link  text-decoration-none list-unstyled text-black" routerLink="/main">SIGN </a>
+      </li>
+    </div>
+
+  </div>
+</nav>
+
+<div [ngClass]="opensearch" class=" position-relative mb-3 w-100   d-flex justify-content-center align-items-center flex-column  " style="z-index: 1;">
+  <input [(ngModel)]="nameSearch" (keyup)="search()"  style="outline: none;"   type="search" name="" id="" class=" w-50  p-3  border-0  rounded-5" placeholder="SEARCH...">
+  <div routerLink="/yourStore/{{item._id}}" style="cursor: pointer;" class="  d-flex justify-content-between align-items-center w-50" *ngFor="let item of searched" >
+    <div class=" d-flex align-items-center justify-content-start w-50 my-2">
+      <img   class="position-relative me-5 "  style="width: 50px; height: 50px; border-radius: 50%;"
+    src='{{item.profilePic[0]}}' alt="">
+    <p class=" fw-bolder fa mt-1">{{item.name}}</p>
+    </div>
+    <div (click)="removeStore(item._id)" *ngIf="userData.role =='admin'" ><i class="fa-solid fa-ban fs-4"></i></div>
+
+  </div>
+</div>
+<app-cart-on-all [e0]="e0" [subtotal]="subtotal" (getlength)="cartlength = $event" (closeCart)="e0 = $event"></app-cart-on-all>
+<app-res-nav [s0]="s0" [role]="userData?.role"  (backNav)="s0 = $event"></app-res-nav>

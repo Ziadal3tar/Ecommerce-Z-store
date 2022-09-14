@@ -1,0 +1,305 @@
+::ng-deep .mainDiv1 .owl-theme .owl-nav {
+  height: 60vh !important;
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+::ng-deep .mainDiv1 .owl-theme .owl-nav .owl-next {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+::ng-deep .mainDiv1 .owl-theme .owl-nav .owl-prev {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+::ng-deep #customerOppinion .owl-theme .owl-nav {
+  height: 60vh !important;
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  border-radius: 20px;
+}
+::ng-deep #customerOppinion .owl-theme .owl-nav .owl-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(231, 231, 231);
+  color: #dc3545;
+  transition: 0.4s;
+  border-radius: 50%;
+  margin-right: -20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px;
+}
+::ng-deep #customerOppinion .owl-theme .owl-nav .owl-prev {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(231, 231, 231);
+  color: #dc3545;
+  transition: 0.4s;
+  border-radius: 50%;
+  margin-left: -20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px;
+}
+#sales {
+  background-color: rgb(255, 255, 255) !important;
+  margin: 0px 0 !important;
+  height: 80vh;
+  border-radius: 20px;
+}
+::ng-deep #ourSales .owl-theme .owl-nav {
+  height: 60vh !important;
+  position: absolute;
+  top: 0;
+  left: 0 !important;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  border-radius: 20px;
+}
+#ourSales .theOffers {
+  width: 80px;
+  height: 25px;
+}
+#ourSales .contant {
+  width: 75% !important;
+  height: 75% !important;
+  background-color: rgb(242, 242, 242);
+}
+::ng-deep #ourSales .owl-theme .owl-nav .owl-next {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(231, 231, 231);
+  color: #dc3545;
+  transition: 0.4s;
+  border-radius: 50%;
+  margin-right: -20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px;
+}
+::ng-deep #ourSales .owl-theme .owl-nav .owl-prev {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(231, 231, 231);
+  color: #dc3545;
+  transition: 0.4s;
+  border-radius: 50%;
+  margin-left: -20px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 2px 8px;
+}
+#ourSales img {
+  width: 130px !important;
+  height: 130px !important;
+}
+.time div {
+  border-radius: 20px;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-top: 10px;
+  width: 60px !important;
+  height: 90px;
+}
+.time h4 {
+  color: #dc3545;
+  font-weight: 700;
+}
+@media (min-width: 1025px) {
+  .header {
+    background-image: url(../../../assets/slider-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh !important;
+    padding-top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .textOnHeader h1 {
+    font-size: 70px;
+  }
+  .textOnHeader {
+    width: 40% !important;
+    margin-left: 100px !important;
+    height: 50vh !important;
+  }
+  .mainDiv,
+  .mainDiv1 img {
+    height: 60vh !important;
+  }
+  .mainDiv2 img {
+    border: 2px solid transparent;
+    border-radius: 20px;
+  }
+  #customer {
+    background-color: rgb(227, 227, 227) !important;
+    margin: 100px 0 !important;
+    height: 90vh;
+    border-radius: 20px;
+  }
+  #customerOppinion .contant {
+    height: 60vh !important;
+  }
+  #customerOppinion {
+    width: 100% !important;
+    height: 60vh !important;
+    background-image: url(../../../assets/4.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    border-radius: 20px;
+    padding: 0;
+  }
+  #customerOppinion img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1025px) {
+  .header {
+    background-image: url(../../../assets/m2.webp);
+    background-position: center center;
+    background-size: cover;
+    height: 100vh !important;
+    padding-top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .textOnHeader {
+    display: none !important;
+  }
+  .textOnHeader h1 {
+    font-size: 70px;
+  }
+  .textOnHeader {
+    width: 65% !important;
+    margin-left: 100px !important;
+  }
+  #customer {
+    background-color: rgb(227, 227, 227) !important;
+    margin: 100px 0 !important;
+    height: 90vh;
+    border-radius: 20px;
+  }
+  #customerOppinion .contant {
+    height: 60vh !important;
+  }
+  #customerOppinion {
+    width: 100% !important;
+    height: 60vh !important;
+    background-image: url(../../../assets/4.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    border-radius: 20px;
+    padding: 0;
+  }
+  #customerOppinion img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  .mainDiv,
+  .mainDiv1 img {
+    height: 60vh !important;
+  }
+  .mainDiv2 img {
+    border: 2px solid transparent;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    background-image: url(../../../assets/summer-portrait-cheerful-red-haired-lady-fashionable-outfit-having-fun-pink.jpg);
+    height: 90vh !important;
+    background-position: center center;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+  .textOnHeader {
+    display: none !important;
+  }
+  .textOnHeader {
+    width: 65% !important;
+    margin-left: 100px !important;
+  }
+  .textOnHeader h1 {
+    font-size: 45px !important;
+  }
+  .mainDiv,
+  .mainDiv1 img {
+    height: 30vh !important;
+  }
+  .mainDiv2 img {
+    border: 2px solid transparent;
+    border-radius: 20px;
+  }
+  .mainDiv2 {
+    display: flex;
+  }
+  .mainDiv {
+    margin-bottom: 140px;
+  }
+  .divInput {
+    width: 50% !important;
+  }
+  #customer {
+    background-color: rgb(227, 227, 227) !important;
+    margin: 100px 0 !important;
+    height: 90vh;
+    border-radius: 20px;
+  }
+  #customerOppinion .contant {
+    height: 60vh !important;
+  }
+  #customerOppinion {
+    width: 100% !important;
+    height: 60vh !important;
+    background-image: url(../../../assets/4.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    border-radius: 20px;
+    padding: 0;
+  }
+  #customerOppinion img {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  ::ng-deep .mainDiv1 .owl-theme .owl-nav {
+    height: 30vh !important;
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,98 @@
+<app-navbar [cartlength]="cartlength"></app-navbar>
+
+<div (click)="openImg = 'd-none'" [ngClass]="openImg" style="z-index: 9; " class=" vh-100 top-0  w-100 d-flex align-items-center justify-content-center position-absolute bg-black bg-opacity-75">
+</div>
+ <div [ngClass]="openImg" class="position-absolute w-100 h-75 d-flex align-items-center justify-content-center">
+  <div  class=" position-absolute  h-100 w-50   container"style="z-index: 10; " >
+    <div class=" h-100 d-flex align-items-center flex-column justify-content-between overflow-hidden ">
+
+      <div class=" col-12 w-100 h-75   overflow-hidden d-flex align-items-center justify-content-center ">
+        <img class=" w-100 h-100 bottom-0 position-relative rounded-3" style="border-radius: 30px !important;"
+          src="{{theProduct?.productImg[indexx1]}}" alt="">
+      </div>
+
+      <div class=" col-12 h-25  d-flex align-items-center justify-content-center  ">
+        <div class=" w-75 h-100 p-2 " *ngFor="let img of theProduct?.productImg let i = index">
+          <img class=" w-100 h-100 position-relative rounded-3" src="{{img}}" alt="" (click)="changeimg1(i)"
+            [ngClass]="{'activeImg': i  === indexx1}">
+
+        </div>
+      </div>
+
+
+
+
+
+
+    </div>
+    </div>
+ </div>
+
+<div class=" container">
+  <div class="main row position-relative  displayProduct container d-flex align-items-center  h-100"
+    style=" height: 85vh !important; cursor: pointer;">
+    <div class="col-md-5  h-75 d-flex align-items-center flex-column justify-content-between overflow-hidden ">
+
+      <div class=" col-12 w-100 h-75   overflow-hidden d-flex align-items-center justify-content-center ">
+        <img (click)="openImg = ''" class=" w-100 h-100 bottom-0 position-relative rounded-3" style="border-radius: 30px !important;"
+          src="{{theProduct?.productImg[indexx]}}" alt="">
+      </div>
+
+      <div class=" col-12 h-25 d-flex align-items-center justify-content-center  ">
+        <div class=" w-75 h-100" *ngFor="let img of theProduct?.productImg let i = index">
+          <img class=" w-100 h-100 position-relative " src="{{img}}" alt="" (click)="changeimg(i)"
+            [ngClass]="{'activeImg': i  === indexx}">
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class=" col-md-6 offset-md-1  h-75  d-flex flex-column justify-content-around   ">
+      <i *ngIf="userData?.storeId == theProduct?.storeId || userData?.role == 'admin'"
+        class="fas fa-trash position-absolute top-0 end-0 btn rounded-circle py-2 fs-6" (click)="deleteProduct()"></i>
+
+      <div class="  d-flex align-items-center justify-content-between w-100 ">
+        <div>
+          <h2 class="my-auto h-100  text-danger">Z-STORE Company</h2>
+          <p  routerLink="/yourStore/{{storeData._id}}" style="cursor:pointer;" class=" text-uppercase ">{{storeData?.name}}-store</p>
+
+        </div>
+
+        <div class="">
+
+          <img routerLink="/yourStore/{{storeData._id}}" class=" rounded-5" style="width: 60px; height: 60px; cursor: pointer;" src={{storeData?.profilePic[0]}} alt="">
+
+        </div>
+      </div>
+      <h1 class="  fw-bold"> {{theProduct?.title}} </h1>
+      <p class="  opacity-50"> {{theProduct?.description}}</p>
+
+      <div class=" d-flex ">
+        <p *ngFor="let size of theProduct?.Sizes let x = index " class=" border p-2"
+          [ngClass]="{'d-none': !size, 'text-danger':size }">{{sizes[x]}}</p>
+
+      </div>
+      <div class=" d-flex flex-row align-items-center">
+        <h4 id="price" class="  d-flex align-items-center "> ${{theProduct?.price}}</h4>
+        <p class="ms-2  fs-6 maincolor maincolorbg  rounded-3">{{theProduct?.sale}}%</p>
+      </div>
+      <p id="total" class="  text-decoration-line-through opacity-50">
+        ${{theProduct?.price / (100 -theProduct?.sale) *100 | number:'1.0-2'}}
+      </p>
+      <div class=" d-flex align-items-center row ">
+        <div id="count" class="  p-2 col-md-4  d-flex justify-content-between rounded-3 "
+          style="background-color: rgba(180, 177, 177, 0.5); padding: 7.5px 5px;"><span (click)="minuus()"
+            style="cursor: pointer;"><i class="fas fa-minus maincolor"></i></span> {{theNumberOfPieces}}<span
+            (click)="plus()" style="cursor: pointer;"><i class="maincolor fas fa-plus"></i></span></div>
+
+        <button (click)="addToCart()" class="col-md-7 btn offset-md-1  bg-danger text-white mt-sm-2 fs-6 mt-md-0"> <i
+            class="fab fa-opencart me-3"></i> add to
+          cart</button>
+        <p class=" text-danger opacity-0 " [ngClass]="{' opacity-100': message  !== '.' }">{{message}} </p>
+
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,89 @@
+<app-navbar [cartlength]="cartlength" ></app-navbar>
+<div class=" container">
+
+<div class=" w-100 text-center fs-1 my-5"><p>CART</p></div>
+
+
+  <div class="row main " cdkDropList  [cdkDropListData]="allProduct">
+
+
+    <div class="col-lg-9 col-sm-12 bg-white p-3 rounded-3 ">
+      <div class="col-12 d-flex text-center border-bottom mb-5">
+        <p class="col-5 text-center">product</p>
+        <p class="col-2">price</p>
+        <p class="col-2">quantity</p>
+        <p class="col-2">sum</p>
+
+      </div>
+
+
+      <div class="col-12 d-flex border-bottom  product" *ngFor="let item of allProduct let i = index" cdkDrag>
+        <div class="col-5 d-flex">
+          <img class="col-4 offset-1 mb-3" src="{{item.productImg[0]}}" alt="">
+          <div class="col-6 offset-1">
+            <p>{{item.category}}</p>
+            <p>{{item.title}}</p>
+
+          </div>
+        </div>
+
+        <p class="col-2 text-center">${{item.price}}</p>
+
+        <div class="col-2">
+
+
+          <div id="count" class="   d-flex justify-content-between rounded-3 "
+            style="background-color: rgba(180, 177, 177, 0.5); padding: 7.5px 5px;"><span (click)="minuus(i)"
+              style="cursor: pointer;"><i class="fas fa-minus maincolor"></i></span>{{cart[i].quantity}}<span
+              (click)="plus(i)" style="cursor: pointer;"><i class="maincolor fas fa-plus"></i></span></div>
+
+        </div>
+
+
+
+        <p class="col-2 text-center">${{item.price}}</p>
+
+
+        <div class="  col-1  ">
+
+          <div class="remove text-danger" (click)="deleteFromCart(item._id)">
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="sum col-lg-2 offset-lg-1 col-sm-12  h-100 p-4 bg-white rounded-3">
+
+<div class="col-12 border-bottom my-3">
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <p>Subtotal</p>
+    <p>${{Total}}</p>
+  </div>
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <p>Discount</p>
+    <p class=" text-danger">-$65</p>
+  </div>
+</div>
+<div class="col-12 my-3">
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <p>Total</p>
+    <p>{{Total}}</p>
+  </div>
+  <button (click)="Subtotal()" class=" btn btn-primary w-100">CheackOut</button>
+</div>
+
+
+
+
+    </div>
+
+
+  </div>
+
+</div>
+<app-cart-on-all (getlength)="cartlength = $event" (allproduct)="allProduct = $event"  ></app-cart-on-all>

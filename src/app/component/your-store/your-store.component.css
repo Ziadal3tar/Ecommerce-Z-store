@@ -1,0 +1,26 @@
+.active{
+border-bottom: 2px solid  rgb(187, 41, 46);
+}
+.disabled{
+  cursor: none;
+  pointer-events: none;
+}
+li{
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  padding-bottom: 1px;
+}
+.top0{
+  margin-top: 30px !important;
+  transition: 0.5s !important;
+}
+.bottom0{ margin-bottom: 30px !important;
+  transition: 0.5s !important;
+}
+  .red{color: red;}
+  .black{color: black;}
+  .white{color: white;}
+  .yellow{color: yellow;}
+  .blue{color: blue;}
+  .green{color: green;}
+

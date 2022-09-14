@@ -1,0 +1,23 @@
+.remove{
+  cursor: pointer;
+  transition: 0.3s;
+}
+.remove:hover{color: black !important;}
+body{
+  background: #000 !important;
+}
+.mat-typography{
+  background: #000;
+}
+.product:not(:last-child) {
+  margin-bottom: 50px;
+}
+@media (min-width: 0px) and (max-width: 991px) {
+  .sum{
+margin-bottom: 30px!important;
+  }
+  .main{
+    flex-wrap: wrap-reverse !important;
+
+  }
+}

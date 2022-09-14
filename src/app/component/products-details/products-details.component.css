@@ -1,0 +1,33 @@
+.displayProduct img {
+  border: 5px solid transparent;
+  border-radius: 15px;
+}
+
+.activeImg {
+  border: #dc3545 solid 4px !important;
+  opacity: 0.6;
+}
+
+@media (min-width: 530px) and (max-width: 768px) {
+  .main {
+    margin-bottom: 60% !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 530px) {
+  .main {
+    margin-bottom: 80% !important;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .main {
+    margin-bottom: 100% !important;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 320px) {
+  .main {
+    margin-bottom: 120% !important;
+  }
+}

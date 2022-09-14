@@ -1,0 +1,27 @@
+
+.navPerInfo p {
+height: 40px;
+  box-sizing: border-box;
+  border-left: 3px solid transparent;
+margin: 0;
+padding: 0 15px;
+display: flex;
+align-items: center;
+opacity: 0.5;
+font-weight: bolder;
+
+}
+
+
+.navPerInfo p:hover {
+border-left: 3px solid red;
+opacity: 1;
+
+}
+
+.theOrder h3{
+opacity: 0.5;
+}
+.details div:not(:last-child){
+border-bottom: solid rgb(0, 0, 0,0.1) 0.5px;
+}

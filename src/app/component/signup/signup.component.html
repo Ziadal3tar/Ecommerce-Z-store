@@ -1,0 +1,127 @@
+<div class="  position-relative" style="background-image: url(../../../assets/beautiful-shining-stars-night-sky.jpg);  height: 100vh; background-size: contain;">
+  <div class="row w-100 h-100 all flex-wrap-reverse ">
+    <div class="container col-md-4 fa offset-md-2 col-sm-8 offset-sm-2 text-white d-flex  justify-content-center   flex-column   ">
+
+<h3>SIGNUP</h3>
+
+
+      <div class=" mt-2">
+        <input type="text " [(ngModel)]="firstName" id="firstName" placeholder="firstName"
+          class="form-control ng-untouched ng-pristine ng-invalid">
+          <p class=" text-danger" [ngClass]="[nameerr]"  >{{errmessage}}</p>
+
+      </div>
+      <div class=" ">
+        <input type="text " [(ngModel)]="lastName" id="lastName" placeholder="lastName"
+          class="form-control ng-untouched ng-pristine ng-invalid">
+          <p class=" text-danger" [ngClass]="[nameerr]"  >{{errmessage}}</p>
+
+      </div>
+
+
+      <div class=" ">
+        <input  type="email" [(ngModel)]="email"  class="form-control ng-untouched ng-pristine ng-invalid"   id="email" placeholder="email" >
+        <p class=" text-danger" [ngClass]="[emailerr]"  >{{errmessage}}</p>
+
+      </div>
+
+
+
+
+      <div class="">
+        <input type="password"  [(ngModel)]="password" id="password" placeholder="password"
+          class="form-control ng-untouched ng-pristine ng-invalid">
+          <p class=" text-danger" [ngClass]="[passworderr]"  >{{errmessage}}</p>
+
+      </div>
+
+
+
+      <div class="">
+        <input type="password"  [(ngModel)]="cPassword" id="cPassword" placeholder="confirm password"
+          class="form-control ng-untouched ng-pristine ng-invalid">
+          <p class=" text-danger" [ngClass]="[Cpassworderr]"  >{{errmessage}}</p>
+
+      </div>
+
+
+
+
+
+      <div class=" form-group">
+        <input type="number" [(ngModel)]="phone" id="phone" placeholder="phone" class="form-control ng-untouched ng-pristine ng-invalid">
+        <p class=" text-danger" [ngClass]="[phoneerr]"  >{{errmessage}}</p>
+
+      </div>
+
+
+      <div class=" form-group">
+        <input type="file"  id="img" name="img" (change)="upload($event)"  class="form-control d-none ng-untouched ng-pristine ng-invalid file-inp">
+
+<label for="img" class=" btn btn-secondary w-100 rounded-5 ">profilePicture</label>
+      </div>
+
+
+
+
+
+
+
+      <button type="submit"  style="border-radius: 25px;" (click)="sendUser()" class="register btn text-black bg-white w-25  my-3">Register</button>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class=" fa col-md-4 offset-md-1 col-sm-8 offset-sm-2  d-flex text-white justify-content-center  flex-column">
+      <a   routerLink="" class="  navbar-brand text-white fw-bold fs-1 " href="#">Z-STORE</a>
+      <h4>
+
+        <span>E</span>
+        <span>v</span>
+        <span>a</span>
+        <span>r</span>
+        <span>y</span>
+        <span>t</span>
+        <span>h</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g </span>
+        <span>y</span>
+        <span>o</span>
+        <span>u </span>
+        <span>n</span>
+        <span>e</span>
+        <span>e</span>
+        <span>d </span>
+        <span>i</span>
+        <span>s </span>
+        <span>h</span>
+        <span>e</span>
+        <span>r</span>
+        <span>e</span>
+      </h4>
+
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+<div class=" container">
+  <div class="row  d-flex align-items-center justify-content-center ">
+
+    <div class=" w-100 vh-100 d-flex align-items-center justify-content-center row ">
+
+      <div [ngClass]="{reqHeight , 'd-none': userdata?.storeId != storeId} "    class="col-lg-3 p-0  col-md-4 m-0 col-sm-12  bg-light rounded-4  chats my-auto overflow-hidden">
+
+        <div style=" background-color: rgb(225, 225, 225) !important;" class="rounded-bottom rounded-4 d-flex align-items-center justify-content-between  pt-3 px-3 fa">
+          <p>requests</p>
+          <i (click)="responsive()" [ngClass]="direction" class=" fs-5"></i>
+        </div>
+        <!-- (click)="chatContant(storeData.chats[i]) -->
+        <div (click)="openChat(i)"  (click)="openChats==!openChats"
+          [ngClass]="{'active': i == theChat}" class="rounded-4 d-flex  align-items-center  p-2  col-12 active"
+          *ngFor="let req of reqs let i = index">
+          <img class="position-relative col-3 me-3" style="width: 50px; height: 50px; border-radius: 50%;"
+            [src]="req?.profilePic" alt="">
+          <p class="col-10  my-auto">{{req?.firstName}} {{req?.lastName}} </p>
+        </div>
+
+      </div>
+
+      <div [ngClass]="half2Style"      class="col-lg-8 col-md-7 col-sm-12 mt-sm-4 mt-md-0 row border-0 m-0 messages rounded-4 p-0 position-relative overflow-hidden messages d-flex flex-column align-items-center justify-content-center inside">
+
+        <div style=" background-color: rgb(225, 225, 225) !important; height: 10%!important;"
+          class=" col-12 d-flex align-items-center p-3 position-absolute top-0 justify-content-between">
+
+          <div class=" col-10 d-flex align-items-center p-3 ">
+            <img *ngIf="userdata?.storeId == storeId" class="position-relative col-3 me-5" style="width: 35px; height: 35px; border-radius: 50%;"
+              [src]="reqs[theChat]?.profilePic[0]" alt="">
+              <img *ngIf="userdata?.storeId != storeId" class="position-relative col-3 me-5" style="width: 35px; height: 35px; border-radius: 50%;"
+              [src]="storeData?.profilePic[0]"   alt="">
+            <p *ngIf="userdata?.storeId == storeId" class="col-4  my-auto">{{reqs[theChat]?.firstName}} {{reqs[theChat]?.lastName}}</p>
+            <p *ngIf="userdata?.storeId != storeId" class="col-4  my-auto">{{storeData?.name}}</p>
+
+          </div>
+          <div class="col-2 d-flex align-items-center justify-content-end p-3">
+            <i (click)="closeChat()" style="cursor: pointer; z-index: 9;" class="fa-solid fa-xmark  "></i>
+
+          </div>
+        </div>
+
+
+        <div #chats class="  "
+          style=" background-image: url(../../../assets/bg-chat1.jpg)!important ; height: 80%!important ; scrollbar-gutter: stable;overflow-y: auto;">
+          <div class="row ">
+
+
+            <div *ngFor="let message of chatMessages" [ngClass]="{'justify-content-end': message?.sendBy != userdata._id && message?.sendBy != userdata.storeId}"
+             class="col-12  d-flex align-items-center ">
+              <p [ngClass]="{'me': message?.sendBy == userdata._id || message?.sendBy == userdata.storeId,'other': message?.sendBy != userdata._id && message?.sendBy != userdata.storeId}"
+               class=" fs-6 w-auto " style="width: auto!important;">{{message?.content}}</p>
+            </div>
+          </div>
+
+
+
+
+
+
+        </div>
+
+
+
+        <div class=" col-12 d-flex py-2 position-absolute bottom-0"
+          style=" background-color: rgb(225, 225, 225) !important; height: 10%!important;">
+          <div class=" col-10 my-auto">
+            <input [(ngModel)]="message" type="text" placeholder="Type a message" class="rounded-5 w-100 p-2 border-0">
+          </div>
+          <div class="col-2 d-flex justify-content-center my-auto">
+            <button style="background-color: #8f1f37;" class=" btn  px-2 py-1 text-white" (click)="send()">Send</button>
+
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+

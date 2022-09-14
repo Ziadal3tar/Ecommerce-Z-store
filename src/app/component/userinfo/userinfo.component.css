@@ -1,0 +1,28 @@
+.navPerInfo p {
+  height: 40px;
+  box-sizing: border-box;
+  border-left: 3px solid transparent;
+  margin: 0;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  font-weight: bolder;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.ifClick{
+  border-left: 3px solid red !important;
+  opacity: 1 !important;
+}
+.navPerInfo p:hover {
+  border-left: 3px solid red;
+  opacity: 1;
+}
+.layer:hover{
+  opacity: 0.75 !important;
+  transition: 0.8s;
+}
+i{
+cursor: pointer;
+}

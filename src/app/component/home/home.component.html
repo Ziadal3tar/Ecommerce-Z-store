@@ -1,0 +1,174 @@
+<app-navbar [cartlength]="cartlength"></app-navbar>
+<div class="header position-relative vh-100 d-flex align-items-center">
+
+  <div class=" textOnHeader d-flex justify-content-around w-50 col-6 align-items-start  ms-5 flex-column">
+    <h1 class=" text-danger fw-bolder">Sale 20% Off</h1>
+
+    <h1 class=" maincolor DA text-black">On Everything</h1>
+    <p class=" w-75">Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta
+      aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi
+      impedit sequi.</p>
+
+    <button class=" btn btn-danger text-white">SHOP NOW</button>
+
+  </div>
+</div>
+
+<br>
+
+
+<div class=" container  ">
+  <h1 class=" text-center my-5">special offers</h1>
+  <div class="row mainDiv " >
+    <div class="col-md-8 col-sm-12  mainDiv1 position-relative h-100">
+
+
+      <owl-carousel-o [options]="theOffers" style="cursor: pointer; ">
+
+        <ng-container *ngFor="let slide of specialoffers">
+          <ng-template carouselSlide [id]="slide.id">
+            <img [src]="slide.productImg[0]" class=" w-100 " style="border-radius: 20px; "
+              [alt]="slide.alt" [title]="slide.title">
+          </ng-template>
+        </ng-container>
+
+      </owl-carousel-o>
+    </div>
+
+
+
+    <div class=" mainDiv2 col-md-4 col-sm-12  h-100  ">
+
+      <div class="imgmaindiv position-relative h-50 col-sm-6 col-md-12">
+
+        <img class="h-100 w-100"
+          src="../../../assets/joyful-girl-with-curly-brown-hair-dancing-purple-background-with-kissing-face-expression_197531-7071.webp"
+          alt="">
+
+      </div>
+
+      <div class="imgmaindiv position-relative h-50 col-sm-6 col-md-12">
+
+        <img class="h-100 w-100"
+          src="../../../assets/joyful-girl-with-curly-brown-hair-dancing-purple-background-with-kissing-face-expression_197531-7071.webp"
+          alt="">
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+<!-- --------------- -->
+
+
+<div id="customer" class=" d-flex align-items-center justify-content-around flex-column    ">
+
+
+  <h2 class=" text-center ">Customer's Testimonial</h2>
+
+
+  <div id="customerOppinion" class="  position-relative  bg-black container  ">
+    <button [ngClass]="feedBackButtonClass" class=" feedback top-0 end-0 position-absolute m-3 border-0 py-2  "
+      style="z-index: 8; transition: 0.4s; border-radius: 20px 5px 20px 5px;" (click)="addFeedback()">add
+      feedback</button>
+    <owl-carousel-o [ngClass]="owlClass" [options]="customer" class=" ">
+
+      <ng-container *ngFor="let slide of Customer" class="  ">
+
+
+        <ng-template carouselSlide [id]="slide.id">
+          <div class="contant text-white d-flex align-items-center justify-content-center   flex-column ">
+            <img [src]="slide.img" [alt]="slide.alt" [title]="slide.title" class=" mb-4 rounded-circle">
+            <h2>{{slide.name}}</h2>
+            <p class=" opacity-75">{{slide.role}}</p>
+            <p class=" text-center">{{slide.oppinion}}</p>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+
+
+
+
+
+
+    <div class=" w-100 h-100 d-flex align-items-center justify-content-center">
+      <div class="w-25 divInput position-relative  d-flex justify-content-center align-items-center h-100"
+      [ngClass]="feedbaclClass"
+        >
+        <input type="text" class="inputfeedback w-100 h-100 ps-3 fa me-2 position-absolute  start-0"
+          style="border-radius: 30px; height: 50px !important;" placeholder="FEEDBACK">
+        <button class=" btn btn-danger position-absolute end-0 me-1 "
+          style="border-radius: 50%; height: 45px; width: 45px; right: 0px !important;"><i class="fa-solid fa-paper-plane"></i></button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -------------------- -->
+
+<div id="sales" class=" d-flex align-items-center justify-content-around flex-column  " style="margin-top:70px!important ;">
+  <div class="px-lg-5  d-flex align-items-center justify-content-between flex-row  container ">
+
+
+    <div class="d-flex align-items-center justify-content-between  col-10 flex-row">
+      <div class="col-3 text-danger">
+        <h3>Z-store's offers</h3>
+      </div>
+
+
+      <div class="time col-md-9 col-sm-8 offset-sm-1 d-flex align-items-center justify-content-start flex-row">
+        <div class="days  me-2">
+          <h4>2</h4>
+          <p>day</p>
+        </div>
+        <div class="houres  me-2">
+          <h4>16</h4>
+          <p>hour</p>
+        </div>
+        <div class="minute  ">
+          <h4>58</h4>
+          <p>minute</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-2 end-0 position-absolute  text-danger">
+      <p style="cursor: pointer;" class=" ">See More...</p>
+    </div>
+  </div>
+
+  <div id="ourSales" class="  position-relative mt-0  container  ">
+    <owl-carousel-o [options]="sales">
+
+      <ng-container *ngFor="let offer of offers">
+        <ng-template carouselSlide [id]="offer.id">
+          <div class="  d-flex align-items-center justify-content-center " style="height: 60vh; ">
+            <div
+              class="contant text-black d-flex align-items-center justify-content-center  rounded-3  position-relative flex-column fs-6 px-4 py-5">
+              <div
+                class=" theOffers bg-danger text-white  position-absolute top-0 end-0 m-2 rounded-3 text-danger d-flex justify-content-center fw-bolder fst-italic ">
+                <p><span>Sale</span> {{offer.sale}}%</p>
+              </div>
+              <img [src]="offer.img" [alt]="offer.alt" [title]="offer.title" class=" mb-4 rounded-3">
+              <h5 class=" text-center">{{offer.name}}</h5>
+              <p class=" opacity-75 text-danger fw-bold">{{ offer.price- offer.price/100 * offer.sale}}$ <span
+                  class="text-decoration-line-through text-black opacity-50">{{offer.price}}$</span></p>
+            </div>
+
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+  </div>
+</div>

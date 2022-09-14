@@ -1,0 +1,42 @@
+.disabled{
+  pointer-events: none !important;
+}
+.btnstyle{
+  background-color: gray !important;
+  outline-style: none;
+  border: 0;
+  pointer-events: none;
+}
+
+.hint{
+  color: red !important;
+
+}
+.slow{
+  transition: 0.5s !important;
+
+}
+.style{
+  opacity: 50% !important;
+  pointer-events: none !important;
+
+}
+.colorsStyle{
+  width: 0px!important;
+  transition: 1s !important;
+  opacity: 0;
+}
+.colorStyle{
+  transition: 1s !important;
+}
+.red{color: red;}
+.black{color: black;}
+.white{color: white;}
+.yellow{color: yellow;}
+.blue{color: blue;}
+.green{color: green;}
+.btnSaveStyle{
+  pointer-events: none !important;
+  background-color: gray;
+  border: 0px;
+}

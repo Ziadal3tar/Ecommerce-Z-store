@@ -1,0 +1,56 @@
+<div class="main  h-100 bg-white position-fixed top-0  m-0 p-0  " [ngClass]="e0"
+style="z-index: 99; scrollbar-gutter: stable; overflow-y: auto; right:  -85%; transition: 1s; ">
+
+
+
+
+<div
+class="w-100 border-bottom d-flex justify-content-between align-items-center p-3 mb-4 ">
+<p  class=" fs-3">Cart</p>
+<i (click)="backCart()" class=" delete d-block fa-solid fa-xmark fs-4 "></i>
+</div>
+
+
+<div *ngIf="allProduct[0]?.title">
+  <div  class="product d-flex mb-3 border-bottom " *ngFor="let item of allProduct let i = index" >
+    <div class="col-3 offset-1 "><img class=" w-100 my-auto" src="{{item?.productImg[0]}}" alt=""></div>
+
+
+    <div class="col-6 offset-1 d-flex flex-column h-100 justify-content-center h-50  ">
+      <p style="font-size: 11px;" class="">{{item?.category}}</p>
+      <h5 class="title">{{item?.title}}</h5>
+      <div class=" d-flex ">
+        <p>${{item?.price}}</p>
+        <p style="font-size: 11px;" class=" opacity-50 ms-2">{{cart[i].quantity}} * ${{item?.price}}</p>
+      </div>
+
+    </div>
+
+
+    <div class="col-1 delete " (click)="deleteFromCart(item._id)"> <i class="fa-solid fa-xmark  "></i>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+    <div>
+
+      <div class="m-0 row  d-flex flex-row align-items-center justify-content-around p-0" >
+        <p class=" opacity-50 fs-3 col-5  " (click)="Subtotal()">Subtotal</p>
+        <p class=" fs-3  col-3 offset-5 me-0 text-end" >${{subtotal}}</p>
+      </div>
+
+
+      <div class="buttons d-flex row  align-items-center justify-content-evenly col-12 p-0">
+        <button routerLink="/cart" class="btn btn-light border col-10 offset-1 ">VIEWCART</button>
+
+        <button   class="btn btn-danger   mt-2 col-10 offset-1">CHEACKOUT</button>
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,119 @@
+<div class=" bg-white  rounded-3">
+  <p class=" border-bottom w-100 fs-2 p-3 fa ">settings</p>
+  <div class=" container ">
+    <div class="row ">
+      <div class="  d-flex flex-column justify-content-between col-lg-6 col-sm-12 py-3  " style="height: auto;">
+        <div class=" d-flex align-items-center justify-content-between col-12">
+          <p class="fa col-10">categoris</p>
+          <p (click)="updateCategories()" style=" cursor: pointer;" class=" opacity-100 col-2 text-center">Update</p>
+        </div>
+        <div class=" mt-2  py-2 " [ngClass]="ifMore0">
+          <div class="  d-flex align-items-center justify-content-center col-12 flex-wrap">
+            <label class="fa col-12" for="">how many categoris in your store ??
+            </label>
+            <div class=" col-12 d-flex">
+              <input [ngClass]="disabled" type="range" max="10" class=" form-range col-9 w-75" [(ngModel)]="num">
+              <p class=" my-auto ps-3 fs-6 col-1">{{num}}</p>
+              <i style="cursor: pointer;" (click)="addnum()" [ngClass]="icon" class="text-center fs-4 col-2   m-0"></i>
+            </div>
+          </div>
+          <div class=" row col-12 d-flex  m-0">
+            <div class="  col-10 ">
+              <p class=" text-danger" *ngIf="num == 10">you can not add more</p>
+              <p class=" text-danger" [ngClass]="style1" *ngIf=" num ==0 &&!storedata?.storeCategories">at least one</p>
+            </div>
+            <p class="  col-2  text-center  " [ngClass]="hint2">Click here</p>
+          </div>
+        </div>
+        <div class=" d-flex w-100 col-12 row">
+          <div class=" mt-2 col-3" *ngFor="let dummy of ' '.repeat(thenum).split(''), let i = index">
+            <label for="" class="fa">{{i+1}}</label>
+            <input type="text" style="width: 90%;" (keypress)="validation($event)" (focus)="getI($event)"
+              (focusout)="categories($event)" class=" form-control ng-untouched ng-pristine ng-invalid">
+          </div>
+          <p [ngClass]="message2" class=" text-danger">stell {{num2}} inputs</p>
+        </div>
+        <div class="my-5">
+          <button [ngClass]="btnstyle" (click)="addCategories()" class="  btn btn-primary fa col-6 py-2 ">Add
+            Categoris</button>
+          <p class=" text-danger">{{message}}</p>
+        </div>
+      </div>
+      <div class=" col-lg-6 col-sm-12 ">
+
+        <div class="col-12 row">
+          <label for="editImg" class=" btn btn-dark col-7 rounded-5">edit your store image</label>
+          <input  (change)="upload($event)" class="d-none" type="file" id="editImg">
+
+
+              <input (keyup)="cc()" type="text"  class=" p-3 fa border-0 bg-light rounded-5 col-4 offset-1 " [(ngModel)]="storeName" placeholder="edit store name">
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <div class="col-12 mt-3 h-auto  row ">
+
+          <div  class="  bg-light col-7 d-flex align-items-center justify-content-center rounded-5 position-relative flex-column  ">
+            <img  *ngIf="url" class=" position-absolute w-100 h-100 rounded-5 "  [src]='url' alt="">
+            <i  *ngIf="!url" class="fa-solid fa-image"></i>
+            <p *ngIf="url" [ngClass]="color" class="fa text-center w-75" style="z-index: 9;">{{storeName}}</p>
+            <p *ngIf="url" [ngClass]="color" class="fa text-center w-75" style="z-index: 9;">{{title}}</p>
+          </div>
+
+
+          <div class=" col-4 offset-1 p-0">
+            <input (keyup)="cc()" type="text" class=" p-3 fa border-0 bg-light rounded-5 w-100  " [(ngModel)]="title"
+              placeholder="edit store title">
+
+            <div class=" col-12  mt-3 ps-3">
+              <p>Click to chose text color</p>
+              <div class="d-flex flex-column">
+                <button (click)="colorsStyle = !colorsStyle" class="btn btn-danger rounded-5 me-2 mb-2">color</button>
+                <div [ngClass]="{'colorsStyle': !colorsStyle}"
+                  class="overflow-hidden d-flex align-items-center bg-light w-100 rounded-5 px-2 colorStyle">
+                  <div (click)="choseColor('red')" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: red"></div>
+                  <div (click)="choseColor('blue')" id="v" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: blue"></div>
+                  <div (click)="choseColor('green')" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: green"></div>
+                  <div (click)="choseColor('black')" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: black"></div>
+                  <div (click)="choseColor('white')" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: white"></div>
+                  <div (click)="choseColor('yellow')" class=" rounded-5"
+                    style="cursor: pointer; width: 20px; height: 20px; background-color: yellow"></div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+        <button  [ngClass]="btnSaveStyle" (click)="editStoreData()" class="  btn btn-primary fa col-4 offset-4 py-2 my-4 ">Save</button>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <hr>
+  </div>
+</div>

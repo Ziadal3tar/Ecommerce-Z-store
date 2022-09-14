@@ -1,0 +1,64 @@
+@media (min-width: 1025px) {
+  .mansOffers img{
+    box-sizing: border-box;
+    border: 5px solid transparent;
+    border-radius: 20px;
+
+  }
+}
+
+
+
+.s-itm{
+  text-decoration: none;
+  color: #dc3545;
+  cursor: pointer;
+  transition: 0.5s;
+  }
+  .s-itm:hover{
+  background-color: #dc3545;
+  opacity: 0.5;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #ffffff;
+    }
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-track{
+  background-color: #000000;
+  border-radius: 10px; height: 80% !important;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #dc3545;
+  border-radius: 20px;
+  transition: 1s !important;
+  margin-right: 20px !important;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #ae0b1b;
+}
+
+.sizesbtn{
+  text-decoration: none;
+  background-color: #dc3545;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+}
+.weightbtn{
+  text-decoration: none;
+  background-color: #dc3545;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 15px;
+}

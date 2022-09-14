@@ -1,0 +1,102 @@
+
+::-webkit-scrollbar{
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track{
+  background-color: #000000;
+  border-radius: 10px;
+  height: 80% !important;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #dc3545;
+  border-radius: 20px;
+  transition: 1s !important;
+  margin-right: 20px !important;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #ae0b1b;
+}
+
+.delete{
+  display: none;
+  cursor: pointer;
+  color: #dc3545;
+
+
+}
+.product:hover .delete{
+  display: block;
+}
+.title:hover{
+color: #dc3545;
+}
+.delete:hover{
+  color: #000000;
+  }
+.buttons button{
+  font-size: 12px !important;
+}
+
+
+
+
+  @media (min-width: 0px) and (max-width: 640px){
+    .before{
+      right: -80% !important;
+    }
+    .after{
+      left: 0% !important;
+      border-radius: 0 0 500px 0 !important;
+
+
+    }
+  .main {
+    width: 80% !important;
+  }
+  }
+  @media (min-width: 640px) and (max-width: 768px) {
+    .before{
+      left: -80% !important;
+    }
+    .after{
+      left: 0% !important;
+      border-radius: 0 0 500px 0 !important;
+
+
+    }
+  .main {
+    width: 80% !important;
+  }
+
+  }
+  @media (min-width: 768px) and (max-width: 1082px) {
+    .before{
+      left: -35% !important;
+    }
+    .after{
+      left: 0% !important;
+      border-radius: 0 0 500px 0 !important;
+
+
+    }
+    .main {
+      width: 35% !important;
+    }
+
+  }
+  @media (min-width: 1083px) and (max-width: 999999999px){
+    .before{
+      left: -35% !important;
+    }
+    .after{
+      left: 0% !important;
+      border-radius: 0 0 500px 0 !important;
+
+
+    }
+    .main {
+      width: 35% !important;
+    }
+
+  }

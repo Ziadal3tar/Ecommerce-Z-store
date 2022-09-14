@@ -1,0 +1,63 @@
+<app-navbar [cartlength]="cartlength"></app-navbar>
+
+<div class="row m-0 ">
+  <div class="  col-lg-3 col-md-4 col-sm-12   position-relative  ">
+    <div class="row m-0 mt-5">
+      <div
+        style="height: 350px !important; overflow-y: auto; scrollbar-gutter: stable; border-radius: 10px; background-color: rgb(235, 235, 235);">
+        <div class=" text-center mt-3 text-danger fw-bold fs-4 ">
+          <p> MEN'S FASHION</p>
+        </div>
+        <div class=" ms-5 fw-bolder h-100  py-1  d-flex align-items-start flex-column ">
+          <a class="s-itm my-2" role="menuitem" [ngClass]="{' bg-opacity-50 bg-danger px-3 rounded-3': specifiedCategory  === i }" (click)="getIndex(i)" *ngFor="let item of femalecategory let i = index" >{{item}}</a>
+
+        </div>
+      </div>
+
+
+      <div class=" mt-5">
+        <ng5-slider (click)="filterPrice()" [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+      </div>
+      <div class=" my-3">
+        <h4 class=" text-center mb-3">Size</h4>
+        <div class=" d-flex flex-row align-items-center justify-content-around">
+          <button class=" sizesbtn btn text-white fs-5">S</button>
+          <button class="sizesbtn btn text-white fs-5 ">M</button>
+          <button class="sizesbtn btn text-white fs-5">L</button>
+          <button class="sizesbtn btn text-white fs-5">Xl</button>
+          <button class="sizesbtn btn text-white fs-5">All</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="  col-lg-9 col-md-8 col-sm-12 row  ">
+    <div class="  col-lg-4 col-md-6 col-sm-6 mb-2 " *ngFor="let slide of products let i = index">
+      <owl-carousel-o [options]="imgProduct">
+        <ng-container>
+          <ng-template carouselSlide *ngFor="let img of slide.productImg ">
+            <a [routerLink]="['/productDetails',slide._id]">
+              <div class=" position-relative w-100  d-flex align-items-start justify-content-center"
+                style="height: 300px;">
+                <div class=" w-75 h-100  d-flex align-items-center justify-content-center">
+                  <img class="w-100" style="border-radius: 20px; cursor: pointer;" [src]="img">
+                </div>
+              </div>
+            </a>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+
+      <div class=" w-100 d-flex align-items-center justify-content-around flex-column mt-2">
+        <p class="  text-danger fw-bold  fs-4">{{slide.price}}$ </p>
+        <p class="  text-black fw-bolder  fs-5"> {{slide.title}}</p>
+        <div class=" d-flex justify-content-evenly align-items-center w-50">
+          <button (click)="addToCart(slide._id)" class=" btn btn-danger me-2">AddToCart </button>
+          <button (click)="addToFavorites(slide._id)" style="width: 30px; height: 30px;" class=" btn btn-danger rounded-circle d-flex align-items-center justify-content-center"><i class="fa-solid fa-heart text-white "></i> </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

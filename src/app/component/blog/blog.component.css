@@ -1,0 +1,52 @@
+.div{
+  width: 400px;
+  height: 400px;
+  border: 0.1px solid red;
+  border-radius: 10px;
+  transition: 1s !important;
+  cursor: pointer;
+
+}
+
+.dd{
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.5s !important;
+  border: 0.1px solid red;
+
+}
+.cc{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1.4s !important;
+  /* border: 0.1px solid red; */
+  background: #000;
+
+}
+
+.topright{
+
+margin-bottom:360px !important;
+margin-left:350px !important;
+}
+.topleft{
+
+  margin-bottom:360px !important;
+  margin-right:360px !important;
+  }
+.bottomright{
+
+  margin-top:450px !important;
+  margin-left:450px !important;
+
+}
+.bottomleft{
+
+  margin-top:450px !important;
+  margin-right:360px !important;
+
+}

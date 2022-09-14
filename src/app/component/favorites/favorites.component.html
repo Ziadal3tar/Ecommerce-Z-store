@@ -1,0 +1,59 @@
+<div class=" bg-white " cdkDropList (cdkDropListDropped)="ondrop($event)" [cdkDropListData]="favoriteProducts">
+  <p class=" border-bottom w-100 fs-2 p-3 fa">favorites</p>
+
+
+
+
+
+  <div class="favorites container col-12 py-3 border-bottom " *ngFor="let item of favoriteProducts let i = index"
+    cdkDrag>
+    <div class="row">
+
+
+
+   <div class=" d-flex col-md-9 col-sm-12 ">
+    <div class="col-4 d-flex align-items-center ">
+      <img class=" w-100  rounded-3" src="{{item.productImg[0]}}" alt="">
+    </div>
+
+
+
+    <div class="col-md-6 col-sm-5  offset-1 mt-sm-2 mt-md-0">
+      <p class=" opacity-50">{{item.category}}</p>
+      <h2>{{item.title}}</h2>
+      <p class=" opacity-75">{{item.description}} </p>
+      <p>{{item.sale}}%</p>
+      <p>{{item.forWhom}}</p>
+      <div class=" d-flex ">
+        <p *ngFor="let size of item.Sizes let x = index " class=" border p-2"
+          [ngClass]="{'d-none': !size, 'text-danger':size }">{{sizes[x]}}</p>
+
+      </div>
+    </div>
+
+   </div>
+
+      <div class="col-md-3 col-sm-12 border-start d-flex flex-column justify-content-around ">
+
+        <p class=" opacity-50 text-decoration-line-through ">${{item.price / (100 -item.sale) *100 | number:'1.0-2'}}
+        </p>
+        <p class=" fs-3">{{item.price}}.00$</p>
+        <button class=" btn btn-danger  w-100" (click)="addToCart(item._id)"> ADD TO CART</button>
+        <p style="cursor: pointer;" class=" text-danger text-decoration-underline"
+          [ngClass]="{'text-black': index===i, 'text-danger':index!==i }" (click)="AddToFavorites(item._id , i)"><i
+            class="fa-solid fa-heart"></i> Add to favorites </p>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+</div>

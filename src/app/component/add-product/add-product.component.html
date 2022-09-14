@@ -1,0 +1,174 @@
+
+<div class=" container ">
+  <div class="row d-flex align-items-center  m-0 " style="height: 100vh !important;">
+
+
+
+
+    <div  class="col-lg-6 col-sm-12 d-flex align-items-center justify-content-center fa">
+      <div class=" col-5 h-50 displayProduct ">
+        <img class="col-12 w-100 h-100 "[ngClass]="[hide]"  src={{mainimg}} alt="">
+        <div class=" col-12 w-100  d-flex justify-content-center  ">
+          <div class=" w-25 " *ngFor="let item of productImg">
+            <img class=" w-100 h-100" [src]="item" alt="">
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class=" col-6 offset-1   d-flex flex-column justify-content-around h-50">
+        <h3 class="  text-danger text-uppercase">{{storeData?.name}}-STORE Company</h3>
+        <h5 class="  fw-bold"> {{title}} </h5>
+        <p class="  opacity-50">{{description}}</p>
+        <p>{{category}}</p>
+        <div class=" d-flex flex-row align-items-center">
+          <h3 id="price" class="  d-flex align-items-center ">${{price}}</h3>
+          <p class="ms-3 fs-6 maincolor maincolorbg px-1 rounded-3">%{{sale}}</p>
+        </div>
+        <p id="total" class="  text-decoration-line-through opacity-50">${{(price / (100-sale)) *100 }}</p>
+
+      </div>
+    </div>
+
+
+    <div  class=" col-lg-6 col-sm-12">
+
+      <div class="sizes d-flex col-12  align-items-center justify-content-between px-5 mb-3 ">
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !S, 'bg-danger':S }" (click)="S = !S">
+          <p class="m-0  position-absolute ">S</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !M, 'bg-danger':M }" (click)="M = !M">
+          <p class="m-0  position-absolute ">M</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !L, 'bg-danger':L }" (click)="L = !L">
+          <p class="m-0  position-absolute ">L</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !IXL, 'bg-danger':IXL }" (click)="IXL = !IXL">
+          <p class="m-0  position-absolute ">IXL</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !IIXL, 'bg-danger':IIXL }" (click)="IIXL = !IIXL">
+          <p class="m-0  position-absolute ">IIXL</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !IIIXL, 'bg-danger':IIIXL }" (click)="IIIXL = !IIIXL">
+          <p class="m-0  position-absolute ">IIIXL</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !IVXL, 'bg-danger':IVXL }" (click)="IVXL = !IVXL">
+          <p class="m-0  position-absolute ">IVXL</p>
+        </div>
+
+        <div class="col-3 btn d-flex justify-content-center align-items-center position-relative rounded-circle "
+          [ngClass]="{'bg-transparent': !VXL, 'bg-danger':VXL }" (click)="VXL = !VXL">
+          <p class="m-0  position-absolute ">VXL</p>
+        </div>
+
+      </div>
+
+
+      <div class="btn-group w-100 " role="group" aria-label="Basic radio toggle button group bg-danger">
+        <input type="radio" (click)="forwhom('male')" class="btn-check " name="btnradio" id="btnradio1"
+          autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio1">male</label>
+
+        <input type="radio" (click)="forwhom('female')" class="btn-check" name="btnradio" id="btnradio2"
+          autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio2">female </label>
+
+        <input type="radio" (click)="forwhom('kids')" class="btn-check" name="btnradio" id="btnradio3"
+          autocomplete="off">
+        <label class="btn btn-outline-primary" for="btnradio3">kids </label>
+      </div>
+
+
+
+      <div class="mt-2">
+        <input type="file" id="imgs" multiple (change)="uploads($event)" src="" alt=""
+          class="form-control ng-untouched ng-pristine ng-invalid d-none" multiple>
+          <label class=" btn btn-light w-100" for="imgs">Product Pictures</label>
+      </div>
+
+
+
+      <div class="mt-2 ">
+        <input type="text" [(ngModel)]="title" class="form-control ng-untouched ng-pristine ng-invalid"
+          placeholder="title">
+      </div>
+
+      <div class=" mt-2">
+        <input type="text" [(ngModel)]="description" class="form-control ng-untouched ng-pristine ng-invalid"
+          placeholder="description">
+      </div>
+
+
+
+
+
+      <div class="input-group col-12 mt-2">
+        <label class="input-group-text">category</label>
+        <select class="form-select" [(ngModel)]="category">
+          <option selected><a class="dropdown-item">click</a></option>
+
+          <option  *ngFor="let item of storeData?.storeCategories let i = index" ><a  class="dropdown-item">{{item}}</a></option>
+
+
+        </select>
+      </div>
+
+
+
+
+
+      <div class="row">
+        <div class="col-4 mt-2 float-end d-flex ">
+          <span class="input-group-text">$</span>
+
+          <input type="number" [(ngModel)]="price" class="form-control ng-untouched ng-pristine ng-invalid"
+            placeholder="price">
+        </div>
+
+
+
+
+        <div class=" col-4  mt-2 d-flex">
+          <span class="input-group-text border-end-0">%</span>
+
+          <input type="number" [(ngModel)]="sale" class="form-control ng-untouched ng-pristine ng-invalid bords"
+            placeholder="sale">
+        </div>
+
+
+        <div class="col-4 mt-2 float-end d-flex ">
+
+
+          <input type="number" [(ngModel)]="quantity" class="form-control ng-untouched ng-pristine ng-invalid"
+            placeholder="Quantity">
+        </div>
+
+      </div>
+
+
+<div class=" d-flex align-items-center justify-content-between col-12 row  mt-3 overflow-hidden">
+
+  <button (click)="addProduct()" style="outline: none!important;"  class="my-auto btn-danger btn px-4 col-4 btn-">add Product</button>
+
+
+  <p  [ngClass]="added" class=" my-auto position-relative  col-8 text-success fa  ">Added</p>
+
+
+</div>
+    </div>
+
+  </div>
