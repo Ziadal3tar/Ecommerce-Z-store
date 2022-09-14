@@ -49,31 +49,31 @@ export class HomeComponent implements OnInit {
 
   Customer: any = [
     {
-      img: '../../../assets/1.jpg',
+      img: './assets/1.jpg',
       name: 'doha mohamed',
       role: 'Customer',
       oppinion: "kja'vn aj'vnoa c'aknva a jovna ",
     },
     {
-      img: '../../../assets/2.jpg',
+      img: './assets/2.jpg',
       name: 'atef ali ',
       role: 'Customer',
       oppinion: "kja'vn aj'vnoa c'a gfgdf dfd sdfs knva a jovna ",
     },
     {
-      img: '../../../assets/3.jpg',
+      img: './assets/3.jpg',
       name: 'khalid mohamed',
       role: 'Customer',
       oppinion: "kja'vn aj'vnoad dgd gvd gv dgv c'aknva a jovna ",
     },
     {
-      img: '../../../assets/1-2.jpg',
+      img: './assets/1-2.jpg',
       name: 'tarqe ayman',
       role: 'Customer',
       oppinion: "kja'vn aj'vno dgs gsg  gr dgeg a c'aknva a jovna ",
     },
     {
-      img: '../../../assets/image-avatar.png',
+      img: './assets/image-avatar.png',
       name: 'abrahem mahmoud mohamed',
       role: 'Customer',
       oppinion:
@@ -83,31 +83,31 @@ export class HomeComponent implements OnInit {
 
   offers: any = [
     {
-      img: '../../../assets/joyful-girl-with-curly-brown-hair-dancing-purple-background-with-kissing-face-expression_197531-7071.webp',
+      img: './assets/joyful-girl-with-curly-brown-hair-dancing-purple-background-with-kissing-face-expression_197531-7071.webp',
       sale: 16,
       price: 143,
       name: "kja'vn aj'vnoa ",
     },
     {
-      img: '../../../assets/woman-model-business-suit-wearing-hat_1303-17693.webp',
+      img: './assets/woman-model-business-suit-wearing-hat_1303-17693.webp',
       sale: 42,
       price: 100,
       name: "kja'vna ",
     },
     {
-      img: '../../../assets/high-fashion-portrait-young-elegant-blonde-woman-black-wool-hat-wearing-oversize-white-fringe-poncho-with-long-grey-dress_273443-3799.webp',
+      img: './assets/high-fashion-portrait-young-elegant-blonde-woman-black-wool-hat-wearing-oversize-white-fringe-poncho-with-long-grey-dress_273443-3799.webp',
       sale: 36,
       price: 600,
       name: "kja'va ",
     },
     {
-      img: '../../../assets/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes_197531-14251.webp',
+      img: './assets/surprised-girl-pink-culottes-posing-with-trolley-full-multi-colored-packages-with-new-clothes_197531-14251.webp',
       sale: 10,
       price: 86,
       name: "kja'vn aj'vnoaa ",
     },
     {
-      img: '../../../assets/modern-pretty-girl-beige-coat-standing-near-building-outdoor-glamorous-sunglasses-her-face-makeup-stylish-tail-hairstyle-hand-near-face-lot-summer-light-last-warm-days_343629-69.webp',
+      img: './assets/modern-pretty-girl-beige-coat-standing-near-building-outdoor-glamorous-sunglasses-her-face-makeup-stylish-tail-hairstyle-hand-near-face-lot-summer-light-last-warm-days_343629-69.webp',
       sale: 50,
       price: 632,
       name: 'kja ',
