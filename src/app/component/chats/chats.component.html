@@ -9,7 +9,6 @@
           <p>requests</p>
           <i (click)="responsive()" [ngClass]="direction" class=" fs-5"></i>
         </div>
-        <!-- (click)="chatContant(storeData.chats[i]) -->
         <div (click)="openChat(i)"  (click)="openChats==!openChats"
           [ngClass]="{'active': i == theChat}" class="rounded-4 d-flex  align-items-center  p-2  col-12 active"
           *ngFor="let req of reqs let i = index">
